@@ -47,8 +47,26 @@ INSERT INTO "AppleEmployees"(
     SELECT * 
     FROM AppleEmployees
     ORDER BY EmployeeID
-    ##(3) I will assume that all employees are recorded into the table
+    ##(3) I will assume that all employees are recorded into the table already
     ## also I will assume that Tim Cook ID=5 and his previous position is COO
+    ## to have Tim on the table ,I will do
+    INSERT INTO "AppleEmployees"(
+            "EmployeeID", "First_Name", "Last_Name", "Employee_Title", "Supervisor_Title")
+    VALUES(5,'TIM','COOK','COO','CEO');
+    # to have Susan Wojcicki as a new employee from google to Apple ,I will assume that her assigned EmployeeID 15 ,I use this #  #query to have her on the table.
+    #STEVE DECEASED
+    UPDATE AppleEmployees
+    SET Employee_Title=NULL
+    WHERE EmployeeID=1;
+    #TIM PROMOTION
+    UPDATE AppleEmployees
+    SET Employee_Title='CEO',Supervisor_Title=NULL
+    WHERE EmployeeID= 5;
+    # Susan moving in!
+    INSERT INTO "AppleEmployees"(
+            "EmployeeID", "First_Name", "Last_Name", "Employee_Title", "Supervisor_Title")
+    VALUES(15,'SUSAN','WOJCICKI','COO','CEO');
+    
     
 
 
